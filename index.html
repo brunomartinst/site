@@ -5,31 +5,33 @@
   <title>Casa Maré Atlântica – Pousada Boutique Pé na Areia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Pousada boutique pé na areia em Ilhabela, com vista para o mar, café da manhã artesanal e experiências exclusivas. Reserve dias de descanso inesquecíveis." />
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  
+
   <style>
     :root {
-      --bg-dark: #050b11;
-      --bg-darker: #020509;
-      --bg-light: #f6f3ee;
-      --bg-card: #0f1720;
-      --accent: #f97316; /* laranja quente */
-      --accent-soft: rgba(249, 115, 22, 0.15);
+      --bg-dark: #020617;
+      --bg-darker: #02040a;
+      --bg-card: #020617;
+      --accent: #f97316;
       --accent-strong: #ea580c;
+      --accent-soft: rgba(249, 115, 22, 0.18);
+      --accent-2: #22c55e;
       --text-main: #e5e7eb;
       --text-soft: #9ca3af;
       --text-strong: #f9fafb;
       --border-soft: rgba(148, 163, 184, 0.28);
-      --radius-lg: 24px;
-      --radius-xl: 32px;
-      --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.7);
-      --shadow-subtle: 0 18px 45px rgba(15, 23, 42, 0.45);
+      --radius-lg: 22px;
+      --radius-xl: 30px;
+      --shadow-strong: 0 30px 80px rgba(15, 23, 42, 0.95);
+      --shadow-soft: 0 22px 60px rgba(15, 23, 42, 0.85);
+      --shadow-subtle: 0 18px 45px rgba(15, 23, 42, 0.6);
       --max-width: 1160px;
       --transition-fast: 0.18s ease-out;
+      --transition-med: 0.3s ease-out;
     }
 
     * {
@@ -43,7 +45,8 @@
     body {
       margin: 0;
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #0b1120 0%, #020617 45%, #02040a 100%);
+      background:
+        radial-gradient(circle at top left, #0b1120 0, #020617 45%, #02040a 100%);
       color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -76,7 +79,7 @@
       inset: 0 0 auto 0;
       z-index: 40;
       backdrop-filter: blur(20px);
-      background: linear-gradient(to bottom, rgba(3, 7, 18, 0.92), rgba(3, 7, 18, 0.65), transparent);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.94), rgba(2, 6, 23, 0.7), transparent);
       border-bottom: 1px solid rgba(148, 163, 184, 0.25);
     }
 
@@ -84,7 +87,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 14px 20px;
+      padding: 12px 20px;
       max-width: var(--max-width);
       margin: 0 auto;
     }
@@ -96,18 +99,21 @@
     }
 
     .logo-mark {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #f97316, #0f172a);
-      border: 1px solid rgba(248, 250, 252, 0.6);
+      background:
+        radial-gradient(circle at 30% 20%, #f97316, #0f172a);
+      border: 1px solid rgba(248, 250, 252, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #f9fafb;
       font-weight: 600;
       font-size: 16px;
-      box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.2), 0 15px 30px rgba(15, 23, 42, 0.85);
+      box-shadow:
+        0 0 0 1px rgba(248, 250, 252, 0.18),
+        0 16px 32px rgba(15, 23, 42, 0.9);
     }
 
     .logo-text-main {
@@ -138,13 +144,14 @@
       color: var(--text-soft);
       position: relative;
       padding-bottom: 4px;
+      white-space: nowrap;
     }
 
     .nav a::after {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
+      left: 12%;
+      right: 12%;
       bottom: 0;
       height: 1px;
       background: linear-gradient(to right, transparent, var(--accent), transparent);
@@ -167,13 +174,14 @@
       padding: 9px 16px;
       border-radius: 999px;
       border: 1px solid rgba(249, 115, 22, 0.7);
-      background: radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.35), rgba(15, 23, 42, 0.96));
+      background:
+        radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.45), rgba(15, 23, 42, 0.96));
       color: #f9fafb !important;
       font-size: 12px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
     }
 
     .nav-cta span.dot {
@@ -185,8 +193,67 @@
     }
 
     .nav-cta:hover {
-      background: radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.6), rgba(2, 6, 23, 0.98));
+      background:
+        radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.7), rgba(2, 6, 23, 0.98));
       transform: translateY(-1px);
+    }
+
+    /* Mobile nav toggle */
+
+    .nav-toggle {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      background: rgba(15, 23, 42, 0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .nav-toggle-lines {
+      width: 18px;
+      height: 14px;
+      position: relative;
+    }
+
+    .nav-toggle-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      transition: transform 0.18s ease-out, opacity 0.18s ease-out, top 0.18s ease-out, bottom 0.18s ease-out;
+    }
+
+    .nav-toggle-line:nth-child(1) {
+      top: 0;
+    }
+
+    .nav-toggle-line:nth-child(2) {
+      top: 6px;
+    }
+
+    .nav-toggle-line:nth-child(3) {
+      bottom: 0;
+    }
+
+    .nav-toggle.is-open .nav-toggle-line:nth-child(1) {
+      top: 6px;
+      transform: rotate(45deg);
+    }
+
+    .nav-toggle.is-open .nav-toggle-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.is-open .nav-toggle-line:nth-child(3) {
+      bottom: 6px;
+      transform: rotate(-45deg);
     }
 
     /* HERO */
@@ -197,8 +264,8 @@
       display: flex;
       align-items: center;
       color: var(--text-main);
-      padding-top: 84px; /* header offset */
-      padding-bottom: 40px;
+      padding-top: 88px; /* header offset */
+      padding-bottom: 48px;
       overflow: hidden;
     }
 
@@ -209,13 +276,12 @@
       overflow: hidden;
     }
 
-    .hero-bg-video video,
-    .hero-bg-video .hero-bg-fallback {
+    .hero-bg-video video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(1.4) contrast(1.05);
-      transform: scale(1.03);
+      filter: saturate(1.35) contrast(1.08);
+      transform: scale(1.04);
     }
 
     .hero-bg-overlay {
@@ -223,9 +289,9 @@
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(circle at top left, rgba(15, 118, 110, 0.65), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.6), transparent 50%),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 0.96));
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.68), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.7), transparent 55%),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.98) 42%, rgba(2, 6, 23, 1));
       mix-blend-mode: multiply;
     }
 
@@ -234,7 +300,7 @@
       margin: 0 auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.4fr);
       gap: 40px;
       align-items: center;
     }
@@ -245,19 +311,22 @@
       gap: 10px;
       padding: 4px 10px 4px 4px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.85);
       border: 1px solid rgba(148, 163, 184, 0.55);
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.22em;
       color: var(--text-soft);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(14px);
     }
 
     .hero-kicker-pill {
       padding: 4px 10px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.7), rgba(15, 23, 42, 0.9));
+      background:
+        radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.8), rgba(15, 23, 42, 0.95));
       color: #f9fafb;
       font-size: 10px;
       letter-spacing: 0.16em;
@@ -269,8 +338,8 @@
       font-size: 46px;
       line-height: 1.1;
       color: var(--text-strong);
-      margin: 0 0 16px;
-      text-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+      margin: 0 0 18px;
+      text-shadow: 0 22px 60px rgba(15, 23, 42, 0.95);
     }
 
     .hero-title span.highlight {
@@ -279,10 +348,10 @@
 
     .hero-subtitle {
       font-size: 15px;
-      max-width: 480px;
+      max-width: 520px;
       color: #e5e7eb;
       opacity: 0.95;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .hero-badges {
@@ -298,9 +367,10 @@
     .hero-badge {
       padding: 6px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
       color: var(--text-soft);
+      backdrop-filter: blur(10px);
     }
 
     .hero-cta-row {
@@ -319,18 +389,19 @@
       border-radius: 999px;
       border: none;
       cursor: pointer;
-      background: radial-gradient(circle at 12% 0, #f97316, #be123c);
+      background:
+        radial-gradient(circle at 12% 0, #f97316, #be123c);
       color: #f9fafb;
       font-size: 14px;
       font-weight: 500;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.98);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px);
+      transform: translateY(-1px) scale(1.01);
       filter: brightness(1.05);
-      box-shadow: 0 22px 55px rgba(15, 23, 42, 1);
+      box-shadow: 0 26px 62px rgba(15, 23, 42, 1);
     }
 
     .btn-secondary {
@@ -340,7 +411,7 @@
       padding: 11px 18px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.9);
       color: var(--text-main);
       font-size: 13px;
       gap: 8px;
@@ -349,7 +420,7 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(15, 23, 42, 0.95);
+      background: rgba(15, 23, 42, 0.98);
       border-color: rgba(249, 115, 22, 0.7);
       transform: translateY(-1px);
     }
@@ -360,33 +431,86 @@
     }
 
     .hero-stats-card {
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(15, 23, 42, 0.88);
       border-radius: var(--radius-xl);
       padding: 18px 18px 18px 18px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(12px);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: var(--shadow-strong);
+      backdrop-filter: blur(20px);
     }
 
-    .hero-stats-heading {
-      font-size: 12px;
+    .hero-card-label {
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.2em;
       color: var(--text-soft);
       margin-bottom: 10px;
     }
 
+    .hero-booking {
+      padding: 10px 10px 12px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.06), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      margin-bottom: 12px;
+    }
+
+    .booking-fields {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .booking-field label {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 3px;
+    }
+
+    .booking-field input,
+    .booking-field select {
+      width: 100%;
+      padding: 7px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-main);
+      font-size: 12px;
+      outline: none;
+    }
+
+    .booking-field input::placeholder {
+      color: rgba(148, 163, 184, 0.75);
+    }
+
+    .booking-note {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-stats-heading {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-soft);
+      margin: 10px 0 8px;
+    }
+
     .hero-stats-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 8px;
     }
 
     .hero-stat {
-      padding: 10px 10px;
+      padding: 9px 9px;
       border-radius: 16px;
-      background: radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.18), rgba(15, 23, 42, 0.95));
+      background: radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.16), rgba(15, 23, 42, 0.98));
       border: 1px solid rgba(148, 163, 184, 0.45);
       font-size: 11px;
       line-height: 1.4;
@@ -409,7 +533,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-top: 4px;
+      margin-top: 6px;
     }
 
     .hero-review-stars {
@@ -424,7 +548,7 @@
     .hero-review-avatar {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-size: 11px;
     }
 
@@ -433,13 +557,62 @@
       height: 26px;
       border-radius: 999px;
       background: radial-gradient(circle at 30% 0, #f97316, #0f172a);
-      border: 1px solid rgba(248, 250, 252, 0.5);
+      border: 1px solid rgba(248, 250, 252, 0.6);
+    }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-soft);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .hero-scroll-indicator span.arrow {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, rgba(148, 163, 184, 0.2), rgba(249, 115, 22, 0.7));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-scroll-indicator span.arrow::before {
+      content: "";
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      height: 12px;
+      background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.85));
+      animation: scrollIndicator 1.6s infinite;
+    }
+
+    @keyframes scrollIndicator {
+      0% {
+        transform: translateY(-12px);
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(32px);
+        opacity: 0;
+      }
     }
 
     /* SECTIONS */
 
     section {
       padding: 80px 0;
+      position: relative;
     }
 
     .section-label {
@@ -464,10 +637,65 @@
       margin-bottom: 30px;
     }
 
+    /* GALLERY */
+
+    .gallery {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 1));
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1.6fr 1.2fr;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .gallery-item {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 0.6s ease-out, filter 0.6s ease-out;
+      filter: saturate(1.15) contrast(1.03);
+    }
+
+    .gallery-item.large {
+      grid-row: span 2;
+      max-height: 420px;
+    }
+
+    .gallery-item.tall {
+      max-height: 420px;
+    }
+
+    .gallery-item.small {
+      max-height: 200px;
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.28), transparent 40%);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: saturate(1.22) contrast(1.06);
+    }
+
     /* HIGHLIGHTS */
 
     .highlights {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 1));
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 1));
     }
 
     .highlights-grid {
@@ -480,8 +708,15 @@
       padding: 18px 18px 18px 18px;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.96));
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.96));
       box-shadow: var(--shadow-subtle);
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(249, 115, 22, 0.65);
     }
 
     .highlight-title {
@@ -499,7 +734,7 @@
     /* ROOMS */
 
     .rooms {
-      background: radial-gradient(circle at top, rgba(15, 118, 110, 0.14), rgba(3, 7, 18, 1));
+      background: radial-gradient(circle at top, rgba(15, 118, 110, 0.18), rgba(3, 7, 18, 1));
     }
 
     .rooms-grid {
@@ -516,15 +751,25 @@
       box-shadow: var(--shadow-subtle);
       display: flex;
       flex-direction: column;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .room-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(249, 115, 22, 0.7);
     }
 
     .room-img-wrapper {
       position: relative;
       overflow: hidden;
-      max-height: 200px;
+      max-height: 220px;
     }
 
     .room-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transition: transform 0.5s ease;
     }
 
@@ -534,13 +779,15 @@
       left: 14px;
       padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(248, 250, 252, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(248, 250, 252, 0.5);
       font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
     }
 
     .room-card:hover .room-img-wrapper img {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
 
     .room-body {
@@ -594,7 +841,7 @@
     /* EXPERIENCES */
 
     .experiences {
-      background: radial-gradient(circle at top, rgba(249, 115, 22, 0.12), rgba(3, 7, 18, 1));
+      background: radial-gradient(circle at top, rgba(249, 115, 22, 0.14), rgba(3, 7, 18, 1));
     }
 
     .experiences-grid {
@@ -606,12 +853,19 @@
     .exp-card {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at 0 0, rgba(249, 115, 22, 0.13), rgba(15, 23, 42, 0.98));
+      background: radial-gradient(circle at 0 0, rgba(249, 115, 22, 0.16), rgba(15, 23, 42, 0.98));
       box-shadow: var(--shadow-subtle);
       padding: 16px 16px 14px;
       display: flex;
       flex-direction: column;
       gap: 8px;
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .exp-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(249, 115, 22, 0.8);
     }
 
     .exp-title {
@@ -645,18 +899,18 @@
       padding: 6px 10px;
       border-radius: 999px;
       background: rgba(3, 7, 18, 0.9);
-      border: 1px solid rgba(248, 250, 252, 0.4);
+      border: 1px solid rgba(248, 250, 252, 0.5);
       cursor: pointer;
     }
 
     .exp-cta:hover {
-      border-color: rgba(249, 115, 22, 0.7);
+      border-color: rgba(249, 115, 22, 0.8);
     }
 
     /* REVIEWS */
 
     .reviews {
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.85), rgba(3, 7, 18, 1));
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 1));
     }
 
     .reviews-grid {
@@ -674,6 +928,14 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(148, 163, 184, 0.8);
     }
 
     .review-stars {
@@ -752,6 +1014,8 @@
       text-transform: uppercase;
       gap: 8px;
       color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.9);
+      box-shadow: var(--shadow-subtle);
     }
 
     .faq-dot {
@@ -782,6 +1046,14 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    }
+
+    .guide-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-strong);
+      border-color: rgba(249, 115, 22, 0.65);
     }
 
     .guide-title {
@@ -873,6 +1145,7 @@
       justify-content: center;
       color: var(--text-soft);
       font-size: 13px;
+      box-shadow: var(--shadow-subtle);
     }
 
     /* FOOTER */
@@ -906,6 +1179,48 @@
       color: var(--text-soft);
     }
 
+    /* WHATSAPP FAB */
+
+    .whatsapp-fab {
+      position: fixed;
+      right: 20px;
+      bottom: 22px;
+      z-index: 50;
+      width: 54px;
+      height: 54px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #22c55e, #16a34a);
+      box-shadow: 0 18px 55px rgba(22, 163, 74, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(248, 250, 252, 0.9);
+    }
+
+    .whatsapp-fab svg {
+      width: 26px;
+      height: 26px;
+      fill: #f9fafb;
+    }
+
+    .whatsapp-fab:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 22px 65px rgba(22, 163, 74, 0.95);
+    }
+
+    /* REVEAL ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
@@ -920,7 +1235,7 @@
         max-width: none;
       }
       .hero-stats-card {
-        max-width: 360px;
+        max-width: 420px;
         margin: 0 auto;
       }
       .highlights-grid,
@@ -934,33 +1249,93 @@
       .contact-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 640px) {
       .header-inner {
         padding-inline: 16px;
       }
+
       .nav {
-        display: none;
+        position: fixed;
+        inset: 64px 16px auto 16px;
+        border-radius: 20px;
+        padding: 14px 16px;
+        flex-direction: column;
+        gap: 14px;
+        background: rgba(15, 23, 42, 0.98);
+        border: 1px solid rgba(148, 163, 184, 0.6);
+        box-shadow: var(--shadow-strong);
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
       }
+
+      .nav.is-open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .nav-cta {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
       .hero {
         padding-top: 80px;
+        padding-bottom: 56px;
       }
+
       .hero-inner {
         padding-inline: 16px;
       }
+
       .hero-title {
         font-size: 30px;
       }
+
       section {
-        padding: 60px 0;
+        padding: 64px 0;
       }
+
       .highlights-grid,
       .rooms-grid,
       .experiences-grid,
       .reviews-grid,
-      .guide-grid {
+      .guide-grid,
+      .gallery-grid {
         grid-template-columns: minmax(0, 1fr);
+      }
+
+      .gallery-item.large,
+      .gallery-item.tall,
+      .gallery-item.small {
+        max-height: 240px;
+      }
+
+      .hero-scroll-indicator {
+        display: none;
+      }
+
+      .whatsapp-fab {
+        width: 50px;
+        height: 50px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (min-width: 641px) {
+      .nav-toggle {
+        display: none;
       }
     }
   </style>
@@ -971,15 +1346,21 @@
     <header class="site-header">
       <div class="header-inner">
         <div class="logo">
-          <div class="logo-mark">
-            <!-- Pode ser inicial do hotel -->
-            C
-          </div>
+          <div class="logo-mark">C</div>
           <div>
             <div class="logo-text-main">Casa Maré Atlântica</div>
             <div class="logo-text-sub">Pousada Boutique • Ilhabela</div>
           </div>
         </div>
+
+        <button class="nav-toggle" aria-label="Abrir menu">
+          <div class="nav-toggle-lines">
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+            <span class="nav-toggle-line"></span>
+          </div>
+        </button>
+
         <nav class="nav">
           <a href="#quartos">Quartos</a>
           <a href="#experiencias">Experiências</a>
@@ -998,18 +1379,17 @@
     <!-- HERO -->
     <section class="hero" id="topo">
       <div class="hero-bg-video">
-        <!-- TODO: troque o src pelos vídeos reais ou mantenha uma imagem como fallback -->
+        <!-- TODO: troque o src pelos vídeos reais ou mantenha uma imagem como poster -->
         <video autoplay muted loop playsinline poster="hero-fallback.jpg">
           <source src="hero-video.mp4" type="video/mp4" />
           <source src="hero-video.webm" type="video/webm" />
-          <!-- Fallback estático -->
-          <img src="hero-fallback.jpg" alt="Vista da piscina com o mar ao fundo">
+          Seu navegador não suporta vídeos em HTML5.
         </video>
       </div>
       <div class="hero-bg-overlay"></div>
 
       <div class="hero-inner">
-        <div>
+        <div class="reveal">
           <div class="hero-kicker">
             <span class="hero-kicker-pill">Pé na areia • Ilhabela</span>
             Vista para o mar em todos os detalhes
@@ -1039,7 +1419,36 @@
           </div>
         </div>
 
-        <aside class="hero-stats-card">
+        <aside class="hero-stats-card reveal">
+          <div class="hero-card-label">Reserve direto com a pousada</div>
+          <div class="hero-booking">
+            <div class="booking-fields">
+              <div class="booking-field">
+                <label>Check-in</label>
+                <input type="date" placeholder="Data" />
+              </div>
+              <div class="booking-field">
+                <label>Check-out</label>
+                <input type="date" placeholder="Data" />
+              </div>
+              <div class="booking-field">
+                <label>Hóspedes</label>
+                <select>
+                  <option>2 adultos</option>
+                  <option>1 adulto</option>
+                  <option>2 adultos • 1 criança</option>
+                  <option>2 adultos • 2 crianças</option>
+                </select>
+              </div>
+            </div>
+            <a class="btn-primary" href="https://wa.me/5500000000000?text=Olá!%20Quero%20ver%20datas%20disponíveis%20para%20me%20hospedar%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener" style="width:100%; justify-content:center; font-size:13px; padding-block:10px; margin-top:4px;">
+              Ver disponibilidade no WhatsApp
+            </a>
+            <div class="booking-note">
+              Tarifa especial para reservas diretas. Sem taxas de sites de terceiros.
+            </div>
+          </div>
+
           <div class="hero-stats-heading">Por que hóspedes voltam</div>
           <div class="hero-stats-grid">
             <div class="hero-stat">
@@ -1059,11 +1468,47 @@
             <div>
               <div class="hero-review-stars">★★★★★</div>
               <div class="hero-review-source">
-                “Acordar vendo o mar todo dia é viciante.” – Avaliação real de hóspedes
+                “Acordar vendo o mar todo dia é viciante.”
               </div>
+            </div>
+            <div class="hero-review-avatar">
+              <div class="hero-review-face"></div>
+              <span>Hóspede real • Booking</span>
             </div>
           </div>
         </aside>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <span>ROLE PARA VER MAIS</span>
+        <span class="arrow"></span>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="container">
+        <div class="section-label">Primeiro, os olhos se apaixonam</div>
+        <h2 class="section-title">Piscina, mar e detalhes que fazem a viagem valer a pena.</h2>
+        <p class="section-subtitle">
+          Use esta galeria para mostrar o que realmente vende a sua pousada: luz, textura, vista e aquele clima de “não quero ir embora”.
+        </p>
+
+        <div class="gallery-grid reveal">
+          <!-- TODO: substitua as imagens pelos arquivos reais -->
+          <figure class="gallery-item large">
+            <img src="galeria-piscina.jpg" alt="Piscina de frente para o mar ao entardecer" />
+          </figure>
+          <figure class="gallery-item tall">
+            <img src="galeria-quarto.jpg" alt="Suíte com cama grande e vista para o mar" />
+          </figure>
+          <figure class="gallery-item small">
+            <img src="galeria-cafe-manha.jpg" alt="Café da manhã com frutas e pães artesanais" />
+          </figure>
+          <figure class="gallery-item small">
+            <img src="galeria-deck.jpg" alt="Deck de madeira com espreguiçadeiras voltadas para o mar" />
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -1076,7 +1521,7 @@
           A Casa Maré Atlântica nasceu para casais e pequenos grupos que buscam um refúgio pé na areia, com conforto de hotel boutique e clima de casa de praia.
         </p>
 
-        <div class="highlights-grid">
+        <div class="highlights-grid reveal">
           <article class="highlight-card">
             <div class="highlight-title">Pé na areia, literalmente</div>
             <div class="highlight-text">
@@ -1108,7 +1553,7 @@
           Todas as suítes foram pensadas para que você acorde descansando: cama grande, enxoval macio e uma varanda perfeita para ver o nascer do sol.
         </p>
 
-        <div class="rooms-grid">
+        <div class="rooms-grid reveal">
           <!-- TODO: substituir as imagens pelos quartos reais -->
           <article class="room-card">
             <div class="room-img-wrapper">
@@ -1173,7 +1618,7 @@
           Antes de chegar você já pode reservar experiências que transformam a viagem: do café na varanda ao pôr do sol em alto mar.
         </p>
 
-        <div class="experiences-grid">
+        <div class="experiences-grid reveal">
           <article class="exp-card">
             <div class="exp-meta">Romântico</div>
             <div class="exp-title">Pacote Romântico ao Anoitecer</div>
@@ -1228,7 +1673,7 @@
           Selecionamos algumas avaliações reais para você sentir o tipo de experiência que nossos hóspedes vivem por aqui.
         </p>
 
-        <div class="reviews-grid">
+        <div class="reviews-grid reveal">
           <article class="review-card">
             <div class="review-stars">★★★★★</div>
             <div class="review-text">
@@ -1274,7 +1719,7 @@
           Reunimos as perguntas mais comuns de quem está planejando se hospedar na Casa Maré Atlântica. Se ficar qualquer dúvida, é só chamar a nossa equipe no WhatsApp.
         </p>
 
-        <div class="faq-grid">
+        <div class="faq-grid reveal">
           <div>
             <div class="faq-badge">
               <span class="faq-dot"></span>
@@ -1332,7 +1777,7 @@
           Você escolhe o tipo de viagem e nós sugerimos praias, passeios e experiências que combinam com o seu ritmo. Tudo isso pode virar um roteiro fechado antes de você chegar.
         </p>
 
-        <div class="guide-grid">
+        <div class="guide-grid reveal">
           <article class="guide-card">
             <div class="guide-meta">Casal</div>
             <div class="guide-title">Fim de semana romântico à beira-mar</div>
@@ -1378,7 +1823,7 @@
           Fale com a nossa equipe pelo WhatsApp para tirar dúvidas, cotar datas e montar sua estada do seu jeito. Respondemos rapidamente.
         </p>
 
-        <div class="contact-grid">
+        <div class="contact-grid reveal">
           <div class="contact-card">
             <div class="contact-row">
               <div class="contact-label">WhatsApp</div>
@@ -1441,6 +1886,57 @@
         </div>
       </div>
     </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <!-- TODO: atualizar o número de WhatsApp -->
+    <a class="whatsapp-fab" href="https://wa.me/5500000000000?text=Olá!%20Quero%20informações%20sobre%20reserva%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener" aria-label="Falar com a pousada pelo WhatsApp">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3C9.373 3 4 8.373 4 15c0 2.209.601 4.277 1.648 6.067L4 29l8.17-1.607A11.9 11.9 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 2c5.523 0 10 4.477 10 10 0 5.522-4.477 10-10 10-1.73 0-3.39-.45-4.868-1.305l-.348-.2-4.853.954.997-4.73-.227-.387A9.94 9.94 0 0 1 6 15C6 9.477 10.477 5 16 5zm-3.164 4.5c-.258 0-.674.097-1.027.487-.353.39-1.353 1.321-1.353 3.222 0 1.902 1.384 3.739 1.577 3.998.194.26 2.66 4.25 6.554 5.786 3.895 1.535 3.895 1.023 4.598.963.704-.06 2.257-.922 2.579-1.813.321-.892.321-1.654.227-1.813-.095-.16-.353-.257-.74-.45-.387-.193-2.288-1.13-2.642-1.259-.353-.129-.61-.193-.868.194-.258.386-1.002 1.259-1.229 1.516-.226.258-.452.29-.839.097-.387-.193-1.635-.6-3.116-1.913-1.152-1.027-1.93-2.296-2.157-2.683-.226-.386-.024-.595.17-.788.174-.173.387-.451.58-.677.194-.226.258-.387.387-.646.129-.258.065-.483-.032-.677-.096-.193-.839-2.086-1.185-2.848-.311-.688-.632-.745-.89-.748z" />
+      </svg>
+    </a>
   </div>
+
+  <script>
+    // Mobile nav toggle
+    (function () {
+      const nav = document.querySelector('.nav');
+      const toggle = document.querySelector('.nav-toggle');
+      if (!nav || !toggle) return;
+
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.classList.toggle('is-open', isOpen);
+      });
+
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('is-open');
+          toggle.classList.remove('is-open');
+        });
+      });
+    })();
+
+    // Reveal on scroll
+    (function () {
+      const revealEls = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) || !revealEls.length) {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      revealEls.forEach(el => observer.observe(el));
+    })();
+  </script>
 </body>
 </html>
