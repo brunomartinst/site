@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Casa Maré Atlântica – Pousada Boutique Pé na Areia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Pousada boutique pé na areia em Ilhabela, com vista para o mar, café da manhã artesanal e experiências exclusivas. Reserve dias de descanso inesquecíveis." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  
+  <style>
+    :root {
+      --bg-dark: #050b11;
+      --bg-darker: #020509;
+      --bg-light: #f6f3ee;
+      --bg-card: #0f1720;
+      --accent: #f97316; /* laranja quente */
+      --accent-soft: rgba(249, 115, 22, 0.15);
+      --accent-strong: #ea580c;
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --text-strong: #f9fafb;
+      --border-soft: rgba(148, 163, 184, 0.28);
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.7);
+      --shadow-subtle: 0 18px 45px rgba(15, 23, 42, 0.45);
+      --max-width: 1160px;
+      --transition-fast: 0.18s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #0b1120 0%, #020617 45%, #02040a 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER / NAV */
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 40;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to bottom, rgba(3, 7, 18, 0.92), rgba(3, 7, 18, 0.65), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #f97316, #0f172a);
+      border: 1px solid rgba(248, 250, 252, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f9fafb;
+      font-weight: 600;
+      font-size: 16px;
+      box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.2), 0 15px 30px rgba(15, 23, 42, 0.85);
+    }
+
+    .logo-text-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-strong);
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav a {
+      color: var(--text-soft);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      opacity: 0;
+      transform: scaleX(0.6);
+      transform-origin: center;
+      transition: opacity var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav a:hover {
+      color: var(--text-main);
+    }
+
+    .nav a:hover::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 115, 22, 0.7);
+      background: radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.35), rgba(15, 23, 42, 0.96));
+      color: #f9fafb !important;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .nav-cta span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
+    }
+
+    .nav-cta:hover {
+      background: radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.6), rgba(2, 6, 23, 0.98));
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      color: var(--text-main);
+      padding-top: 84px; /* header offset */
+      padding-bottom: 40px;
+      overflow: hidden;
+    }
+
+    .hero-bg-video {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+
+    .hero-bg-video video,
+    .hero-bg-video .hero-bg-fallback {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.4) contrast(1.05);
+      transform: scale(1.03);
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.65), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.6), transparent 50%),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 0.96));
+      mix-blend-mode: multiply;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 4px 10px 4px 4px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .hero-kicker-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, rgba(249, 115, 22, 0.7), rgba(15, 23, 42, 0.9));
+      color: #f9fafb;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 46px;
+      line-height: 1.1;
+      color: var(--text-strong);
+      margin: 0 0 16px;
+      text-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-title span.highlight {
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      max-width: 480px;
+      color: #e5e7eb;
+      opacity: 0.95;
+      margin-bottom: 24px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-badge {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-soft);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      background: radial-gradient(circle at 12% 0, #f97316, #be123c);
+      color: #f9fafb;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 1);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--text-main);
+      font-size: 13px;
+      gap: 8px;
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(249, 115, 22, 0.7);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .hero-stats-card {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 18px 18px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-stats-heading {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    .hero-stat {
+      padding: 10px 10px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 0 0, rgba(148, 163, 184, 0.18), rgba(15, 23, 42, 0.95));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .hero-stat-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-strong);
+    }
+
+    .hero-stat-label {
+      color: var(--text-soft);
+    }
+
+    .hero-review {
+      font-size: 11px;
+      color: var(--text-soft);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .hero-review-stars {
+      color: #fbbf24;
+      font-size: 13px;
+    }
+
+    .hero-review-source {
+      opacity: 0.9;
+    }
+
+    .hero-review-avatar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+    }
+
+    .hero-review-face {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #f97316, #0f172a);
+      border: 1px solid rgba(248, 250, 252, 0.5);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--text-strong);
+      margin: 0 0 16px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 540px;
+      margin-bottom: 30px;
+    }
+
+    /* HIGHLIGHTS */
+
+    .highlights {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 1));
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .highlight-card {
+      padding: 18px 18px 18px 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.96));
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .highlight-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: #e5e7eb;
+    }
+
+    .highlight-text {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    /* ROOMS */
+
+    .rooms {
+      background: radial-gradient(circle at top, rgba(15, 118, 110, 0.14), rgba(3, 7, 18, 1));
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .room-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .room-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      max-height: 200px;
+    }
+
+    .room-img-wrapper img {
+      transition: transform 0.5s ease;
+    }
+
+    .room-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(248, 250, 252, 0.4);
+      font-size: 11px;
+    }
+
+    .room-card:hover .room-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .room-body {
+      padding: 14px 16px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .room-name {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-strong);
+    }
+
+    .room-meta {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .room-footer {
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .room-price {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .room-cta {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(15, 23, 42, 0.9);
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .room-cta:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(249, 115, 22, 0.7);
+      transform: translateY(-1px);
+    }
+
+    /* EXPERIENCES */
+
+    .experiences {
+      background: radial-gradient(circle at top, rgba(249, 115, 22, 0.12), rgba(3, 7, 18, 1));
+    }
+
+    .experiences-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .exp-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at 0 0, rgba(249, 115, 22, 0.13), rgba(15, 23, 42, 0.98));
+      box-shadow: var(--shadow-subtle);
+      padding: 16px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .exp-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-strong);
+    }
+
+    .exp-meta {
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .exp-text {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .exp-footer {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .exp-cta {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(3, 7, 18, 0.9);
+      border: 1px solid rgba(248, 250, 252, 0.4);
+      cursor: pointer;
+    }
+
+    .exp-cta:hover {
+      border-color: rgba(249, 115, 22, 0.7);
+    }
+
+    /* REVIEWS */
+
+    .reviews {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.85), rgba(3, 7, 18, 1));
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .review-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 16px 16px 14px;
+      font-size: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .review-stars {
+      color: #fbbf24;
+      font-size: 13px;
+    }
+
+    .review-text {
+      color: var(--text-soft);
+    }
+
+    .review-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    /* FAQ */
+
+    .faq {
+      background: radial-gradient(circle at top, rgba(15, 118, 110, 0.12), rgba(3, 7, 18, 1));
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .faq-list {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      padding: 12px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      cursor: default;
+    }
+
+    .faq-answer {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .faq-note {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 12px;
+    }
+
+    .faq-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      gap: 8px;
+      color: var(--text-soft);
+    }
+
+    .faq-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.35);
+    }
+
+    /* GUIDE */
+
+    .guide {
+      background: radial-gradient(circle at top, rgba(249, 115, 22, 0.08), rgba(3, 7, 18, 1));
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .guide-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.94);
+      padding: 16px 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .guide-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-strong);
+    }
+
+    .guide-meta {
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .guide-text {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .guide-cta {
+      margin-top: 6px;
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(3, 7, 18, 0.9);
+      cursor: pointer;
+      align-self: flex-start;
+    }
+
+    .guide-cta:hover {
+      border-color: rgba(249, 115, 22, 0.7);
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.92), rgba(3, 7, 18, 1));
+      padding-bottom: 60px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-subtle);
+      font-size: 13px;
+    }
+
+    .contact-row {
+      margin-bottom: 10px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      color: var(--text-main);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .map-placeholder {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top, rgba(15, 118, 110, 0.16), rgba(15, 23, 42, 1));
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      border-top: 1px solid rgba(31, 41, 55, 1);
+      background: #020617;
+      padding: 14px 0 20px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-soft);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+      }
+      .hero-title {
+        font-size: 34px;
+      }
+      .hero-subtitle {
+        max-width: none;
+      }
+      .hero-stats-card {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+      .highlights-grid,
+      .rooms-grid,
+      .experiences-grid,
+      .reviews-grid,
+      .guide-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .faq-grid,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        padding-inline: 16px;
+      }
+      .nav {
+        display: none;
+      }
+      .hero {
+        padding-top: 80px;
+      }
+      .hero-inner {
+        padding-inline: 16px;
+      }
+      .hero-title {
+        font-size: 30px;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .highlights-grid,
+      .rooms-grid,
+      .experiences-grid,
+      .reviews-grid,
+      .guide-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo">
+          <div class="logo-mark">
+            <!-- Pode ser inicial do hotel -->
+            C
+          </div>
+          <div>
+            <div class="logo-text-main">Casa Maré Atlântica</div>
+            <div class="logo-text-sub">Pousada Boutique • Ilhabela</div>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#quartos">Quartos</a>
+          <a href="#experiencias">Experiências</a>
+          <a href="#guia-local">Guia local</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contato">Contato</a>
+          <!-- TODO: substituir o link do WhatsApp abaixo pelo real -->
+          <a class="nav-cta" href="https://wa.me/5500000000000?text=Olá!%20Quero%20informações%20sobre%20reserva%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener">
+            <span class="dot"></span>
+            Reservar agora
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="topo">
+      <div class="hero-bg-video">
+        <!-- TODO: troque o src pelos vídeos reais ou mantenha uma imagem como fallback -->
+        <video autoplay muted loop playsinline poster="hero-fallback.jpg">
+          <source src="hero-video.mp4" type="video/mp4" />
+          <source src="hero-video.webm" type="video/webm" />
+          <!-- Fallback estático -->
+          <img src="hero-fallback.jpg" alt="Vista da piscina com o mar ao fundo">
+        </video>
+      </div>
+      <div class="hero-bg-overlay"></div>
+
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker">
+            <span class="hero-kicker-pill">Pé na areia • Ilhabela</span>
+            Vista para o mar em todos os detalhes
+          </div>
+          <h1 class="hero-title">
+            Dias de descanso <span class="highlight">com vista pro mar</span> em uma pousada boutique pé na areia.
+          </h1>
+          <p class="hero-subtitle">
+            Amanheça com o som das ondas, café da manhã artesanal e experiências pensadas para casais que buscam conforto, privacidade e contato verdadeiro com o mar.
+          </p>
+          <div class="hero-badges">
+            <span class="hero-badge">Nota 9,4 no Booking</span>
+            <span class="hero-badge">Café da manhã artesanal</span>
+            <span class="hero-badge">Estacionamento no local</span>
+          </div>
+          <div class="hero-cta-row">
+            <!-- TODO: substituir o link do WhatsApp + texto de contexto -->
+            <a class="btn-primary" href="https://wa.me/5500000000000?text=Olá!%20Quero%20ver%20datas%20disponíveis%20para%20me%20hospedar%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener">
+              Ver datas e reservar
+            </a>
+            <a class="btn-secondary" href="#quartos">
+              Ver quartos
+            </a>
+          </div>
+          <div class="hero-note">
+            Você fala direto com a recepção da pousada pelo WhatsApp, sem taxas extras de reserva.
+          </div>
+        </div>
+
+        <aside class="hero-stats-card">
+          <div class="hero-stats-heading">Por que hóspedes voltam</div>
+          <div class="hero-stats-grid">
+            <div class="hero-stat">
+              <div class="hero-stat-value">9,6</div>
+              <div class="hero-stat-label">Conforto da cama</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">9,8</div>
+              <div class="hero-stat-label">Localização</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-value">9,7</div>
+              <div class="hero-stat-label">Café da manhã</div>
+            </div>
+          </div>
+          <div class="hero-review">
+            <div>
+              <div class="hero-review-stars">★★★★★</div>
+              <div class="hero-review-source">
+                “Acordar vendo o mar todo dia é viciante.” – Avaliação real de hóspedes
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights">
+      <div class="container">
+        <div class="section-label">Para quem é a Casa Maré Atlântica</div>
+        <h2 class="section-title">Uma pousada pensada para quem quer descansar de verdade.</h2>
+        <p class="section-subtitle">
+          A Casa Maré Atlântica nasceu para casais e pequenos grupos que buscam um refúgio pé na areia, com conforto de hotel boutique e clima de casa de praia.
+        </p>
+
+        <div class="highlights-grid">
+          <article class="highlight-card">
+            <div class="highlight-title">Pé na areia, literalmente</div>
+            <div class="highlight-text">
+              Você desce da suíte direto para a areia. Nada de carro, fila ou caminhada longa. Em poucos passos você está com o pé no mar.
+            </div>
+          </article>
+          <article class="highlight-card">
+            <div class="highlight-title">Conforto de boutique hotel</div>
+            <div class="highlight-text">
+              Cama king, enxoval de hotelaria, chuveiro de alta pressão, ar condicionado silencioso e quartos pensados para ouvir o mar e não a rua.
+            </div>
+          </article>
+          <article class="highlight-card">
+            <div class="highlight-title">Experiências sob medida</div>
+            <div class="highlight-text">
+              Pacotes românticos, passeios em lancha exclusiva, trilhas guiadas e jantares privados. Você monta a experiência do seu jeito.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROOMS -->
+    <section class="rooms" id="quartos">
+      <div class="container">
+        <div class="section-label">Quartos & suítes</div>
+        <h2 class="section-title">Quartos com vista, conforto e silêncio.</h2>
+        <p class="section-subtitle">
+          Todas as suítes foram pensadas para que você acorde descansando: cama grande, enxoval macio e uma varanda perfeita para ver o nascer do sol.
+        </p>
+
+        <div class="rooms-grid">
+          <!-- TODO: substituir as imagens pelos quartos reais -->
+          <article class="room-card">
+            <div class="room-img-wrapper">
+              <img src="quarto-vista-mar.jpg" alt="Suíte Vista Mar com varanda e vista para o oceano" />
+              <div class="room-badge">Mais reservado</div>
+            </div>
+            <div class="room-body">
+              <div class="room-name">Suíte Vista Mar</div>
+              <div class="room-meta">Até 2 pessoas • Cama king • Varanda com rede • Vista frontal para o mar</div>
+              <div class="room-footer">
+                <div class="room-price">a partir de R$ 690 / noite</div>
+                <a class="room-cta" href="https://wa.me/5500000000000?text=Olá!%20Quero%20ver%20datas%20para%20a%20Suíte%20Vista%20Mar." target="_blank" rel="noopener">
+                  Ver disponibilidade
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <div class="room-img-wrapper">
+              <img src="quarto-jardim.jpg" alt="Suíte Jardim com varanda para o jardim interno" />
+              <div class="room-badge">Melhor custo-benefício</div>
+            </div>
+            <div class="room-body">
+              <div class="room-name">Suíte Jardim</div>
+              <div class="room-meta">Até 2 pessoas • Cama queen • Varanda no jardim • Clima mais reservado</div>
+              <div class="room-footer">
+                <div class="room-price">a partir de R$ 520 / noite</div>
+                <a class="room-cta" href="https://wa.me/5500000000000?text=Olá!%20Quero%20ver%20datas%20para%20a%20Suíte%20Jardim." target="_blank" rel="noopener">
+                  Ver disponibilidade
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="room-card">
+            <div class="room-img-wrapper">
+              <img src="quarto-familia.jpg" alt="Suíte Família com dois ambientes e camas extras" />
+              <div class="room-badge">Perfeita para família</div>
+            </div>
+            <div class="room-body">
+              <div class="room-name">Suíte Família</div>
+              <div class="room-meta">Até 4 pessoas • Dois ambientes • Ideal para famílias ou amigos</div>
+              <div class="room-footer">
+                <div class="room-price">a partir de R$ 790 / noite</div>
+                <a class="room-cta" href="https://wa.me/5500000000000?text=Olá!%20Quero%20ver%20datas%20para%20a%20Suíte%20Família." target="_blank" rel="noopener">
+                  Ver disponibilidade
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES -->
+    <section class="experiences" id="experiencias">
+      <div class="container">
+        <div class="section-label">Experiências & upsells</div>
+        <h2 class="section-title">Monte a sua estada do seu jeito.</h2>
+        <p class="section-subtitle">
+          Antes de chegar você já pode reservar experiências que transformam a viagem: do café na varanda ao pôr do sol em alto mar.
+        </p>
+
+        <div class="experiences-grid">
+          <article class="exp-card">
+            <div class="exp-meta">Romântico</div>
+            <div class="exp-title">Pacote Romântico ao Anoitecer</div>
+            <div class="exp-text">
+              Decoração com velas e flores, espumante gelado e tábua de queijos na varanda da suíte com vista para o mar.
+            </div>
+            <div class="exp-footer">
+              <span>+ R$ 390 por noite</span>
+              <a class="exp-cta" href="https://wa.me/5500000000000?text=Quero%20adicionar%20o%20Pacote%20Romântico%20à%20minha%20reserva." target="_blank" rel="noopener">
+                Adicionar à reserva
+              </a>
+            </div>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-meta">Mar & aventura</div>
+            <div class="exp-title">Passeio de Lancha Exclusivo</div>
+            <div class="exp-text">
+              Passeio privativo pelas praias mais reservadas de Ilhabela, com parada para mergulho e frutas frescas a bordo.
+            </div>
+            <div class="exp-footer">
+              <span>2h • sob consulta</span>
+              <a class="exp-cta" href="https://wa.me/5500000000000?text=Quero%20informações%20sobre%20o%20passeio%20de%20lancha%20exclusivo." target="_blank" rel="noopener">
+                Falar com a equipe
+              </a>
+            </div>
+          </article>
+
+          <article class="exp-card">
+            <div class="exp-meta">Relax</div>
+            <div class="exp-title">Day-use piscina & spa</div>
+            <div class="exp-text">
+              Para quem quer aproveitar a estrutura mesmo sem se hospedar: acesso à piscina, espreguiçadeiras e área de spa seco.
+            </div>
+            <div class="exp-footer">
+              <span>das 10h às 18h</span>
+              <a class="exp-cta" href="https://wa.me/5500000000000?text=Quero%20reservar%20o%20day-use%20da%20piscina." target="_blank" rel="noopener">
+                Reservar day-use
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <div class="container">
+        <div class="section-label">O que dizem os hóspedes</div>
+        <h2 class="section-title">Prova social de quem já acordou vendo o mar daqui.</h2>
+        <p class="section-subtitle">
+          Selecionamos algumas avaliações reais para você sentir o tipo de experiência que nossos hóspedes vivem por aqui.
+        </p>
+
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">
+              “Acordar, abrir a cortina e já ver o mar deu outra energia pro nosso final de semana. A cama é maravilhosa e o café da manhã é um capítulo à parte.”
+            </div>
+            <div class="review-footer">
+              <span>Mariana S.</span>
+              <span>Booking • Ago/2025</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <div class="review-text">
+              “Queríamos alguns dias em silêncio, só ouvindo o mar. A equipe entendeu exatamente o que buscávamos e ajustou tudo: horário do café, passeios, até o horário da limpeza.”
+            </div>
+            <div class="review-footer">
+              <span>João & Ana</span>
+              <span>Google • Jul/2025</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-stars">★★★★☆</div>
+            <div class="review-text">
+              “A estrada até a ilha é um pouco longa, mas a localização da pousada compensa totalmente. Estacionamento seguro, chuveiro excelente e equipe muito atenciosa.”
+            </div>
+            <div class="review-footer">
+              <span>Fernanda P.</span>
+              <span>Tripadvisor • Jun/2025</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-label">Dúvidas frequentes</div>
+        <h2 class="section-title">Antes de reservar, você já sabe exatamente como funciona.</h2>
+        <p class="section-subtitle">
+          Reunimos as perguntas mais comuns de quem está planejando se hospedar na Casa Maré Atlântica. Se ficar qualquer dúvida, é só chamar a nossa equipe no WhatsApp.
+        </p>
+
+        <div class="faq-grid">
+          <div>
+            <div class="faq-badge">
+              <span class="faq-dot"></span>
+              Reservas diretas pelo WhatsApp
+            </div>
+            <p class="section-subtitle" style="margin-top:14px;">
+              Você fala direto com a pousada, sem taxas de intermediação. Podemos te ajudar a escolher o melhor quarto e ainda incluir experiências como passeio de lancha e pacote romântico.
+            </p>
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <div class="faq-question">Quais são os horários de check-in e check-out?</div>
+              <div class="faq-answer">
+                O check-in é a partir das 15h e o check-out até às 12h. Sempre que possível, antecipamos ou estendemos esses horários mediante disponibilidade.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Aceitam crianças? E berço?</div>
+              <div class="faq-answer">
+                Sim, aceitamos crianças em categorias específicas de quartos. Podemos providenciar berço sob consulta e disponibilidade. Fale com a equipe pelo WhatsApp informando a idade.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Pets são bem-vindos?</div>
+              <div class="faq-answer">
+                Aceitamos pets de pequeno porte em alguns quartos, com taxa extra de limpeza. Consulte a equipe para ver quais opções se encaixam melhor na sua viagem.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Como funciona o cancelamento?</div>
+              <div class="faq-answer">
+                Para reservas diretas, o cancelamento sem cobrança pode ser feito até D-7 (7 dias antes da chegada). Após esse prazo, pode haver cobrança parcial. Enviaremos as políticas completas na confirmação.
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-question">Tem estacionamento no local?</div>
+              <div class="faq-answer">
+                Sim, temos estacionamento próprio gratuito para hóspedes, sujeito à disponibilidade de vagas.
+              </div>
+            </div>
+            <div class="faq-note">
+              Não achou sua pergunta aqui? Envie uma mensagem rápida no WhatsApp e nossa equipe responde em poucos minutos.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDE -->
+    <section class="guide" id="guia-local">
+      <div class="container">
+        <div class="section-label">Guia local</div>
+        <h2 class="section-title">Três roteiros prontos para aproveitar Ilhabela sem esforço.</h2>
+        <p class="section-subtitle">
+          Você escolhe o tipo de viagem e nós sugerimos praias, passeios e experiências que combinam com o seu ritmo. Tudo isso pode virar um roteiro fechado antes de você chegar.
+        </p>
+
+        <div class="guide-grid">
+          <article class="guide-card">
+            <div class="guide-meta">Casal</div>
+            <div class="guide-title">Fim de semana romântico à beira-mar</div>
+            <div class="guide-text">
+              Sexta com pôr do sol no deck, sábado entre praia reservada e jantar com velas, domingo com café sem pressa e saída late check-out.
+            </div>
+            <a class="guide-cta" href="https://wa.me/5500000000000?text=Quero%20o%20roteiro%20de%20fim%20de%20semana%20romântico%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener">
+              Quero esse roteiro
+            </a>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-meta">Família</div>
+            <div class="guide-title">Dias leves com crianças na ilha</div>
+            <div class="guide-text">
+              Manhãs em praias mais calmas, pausas estratégicas para sonecas, restaurantes kids friendly e trilha leve para toda a família.
+            </div>
+            <a class="guide-cta" href="https://wa.me/5500000000000?text=Quero%20o%20roteiro%20para%20família%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener">
+              Quero esse roteiro
+            </a>
+          </article>
+
+          <article class="guide-card">
+            <div class="guide-meta">Aventura</div>
+            <div class="guide-title">Trilhas, cachoeiras e mar</div>
+            <div class="guide-text">
+              Trilhas guiadas, cachoeiras escondidas, praias mais selvagens e passeio de lancha para fechar o dia com mergulho.
+            </div>
+            <a class="guide-cta" href="https://wa.me/5500000000000?text=Quero%20o%20roteiro%20de%20aventura%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener">
+              Quero esse roteiro
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="section-label">Contato & localização</div>
+        <h2 class="section-title">Vamos planejar seus dias à beira-mar.</h2>
+        <p class="section-subtitle">
+          Fale com a nossa equipe pelo WhatsApp para tirar dúvidas, cotar datas e montar sua estada do seu jeito. Respondemos rapidamente.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-row">
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-value">
+                <!-- TODO: substituir telefone -->
+                <a href="https://wa.me/5500000000000?text=Olá!%20Quero%20informações%20sobre%20reserva%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener">
+                  +55 (00) 00000-0000
+                </a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">E-mail</div>
+              <div class="contact-value">
+                <!-- TODO: substituir email -->
+                <a href="mailto:contato@casamareatlantica.com.br">contato@casamareatlantica.com.br</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Endereço</div>
+              <div class="contact-value">
+                <!-- TODO: substituir endereço -->
+                Praia X, nº 000 – Ilhabela/SP • Brasil
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Como chegar</div>
+              <div class="contact-value">
+                <ul style="padding-left: 18px; margin: 4px 0;">
+                  <li>Travessia de balsa São Sebastião &gt; Ilhabela</li>
+                  <li>Estacionamento no local para hóspedes</li>
+                  <li>Recomendamos chegar antes das 21h</li>
+                </ul>
+              </div>
+            </div>
+            <div class="contact-actions">
+              <a class="btn-primary" href="https://wa.me/5500000000000?text=Olá!%20Quero%20ver%20datas%20disponíveis%20para%20me%20hospedar%20na%20Casa%20Maré%20Atlântica." target="_blank" rel="noopener">
+                Falar no WhatsApp agora
+              </a>
+              <a class="btn-secondary" href="#topo">
+                Voltar ao topo
+              </a>
+            </div>
+          </div>
+
+          <div class="map-placeholder">
+            <!-- TODO: aqui você pode depois embedar um mapa do Google Maps -->
+            Mapa da localização da pousada (embed do Google Maps aqui)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>© 2025 Casa Maré Atlântica – Pousada Boutique. Todos os direitos reservados.</div>
+        <div class="footer-links">
+          <span>Feito por Axie.</span>
+          <a href="#topo">Topo</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
